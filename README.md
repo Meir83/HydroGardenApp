@@ -1,2 +1,0 @@
-# HydroGardenApp
-hydroponic garden management 
