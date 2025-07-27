@@ -3,7 +3,16 @@
     "allow": [
       "Bash(npm run build:*)",
       "Bash(timeout 10 npm start)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr create:*)",
+      "Bash(winget install:*)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" pr create --title \"Add comprehensive performance optimizations to HydroGarden app\" --body \"Implemented React.memo(), code splitting, service worker, performance monitoring, and storage optimization. Significant performance improvements expected.\")",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" auth login)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

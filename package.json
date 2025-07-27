@@ -1,6 +1,6 @@
 {
   "name": "hydrogarden-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -11,15 +11,27 @@
     "build:analyze": "npm run build && npm run analyze"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
     "gapi-script": "^1.2.0",
     "react": "^18.2.0",
     "react-datepicker": "^8.4.0",
     "react-dom": "^18.2.0",
     "react-native-web": "^0.19.9",
-    "react-router-dom": "^6.26.0"
+    "react-router-dom": "^6.26.0",
+    "lucide-react": "^0.263.1",
+    "framer-motion": "^7.2.1",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "react-scripts": "^5.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

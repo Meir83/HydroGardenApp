@@ -8,31 +8,32 @@ const LoadingSpinner = ({
   overlay = false,
   className = '' 
 }) => {
-  const sizes = {
-    small: 16,
-    medium: 24,
-    large: 32,
-    xlarge: 48
+  const sizeMap = {
+    small: '20px',
+    medium: '40px',
+    large: '60px',
+    xlarge: '80px'
   };
 
-  const colors = {
+  const colorMap = {
     primary: theme.colors.primary.main,
     secondary: theme.colors.secondary.main,
-    white: '#ffffff',
-    grey: theme.colors.grey[600]
+    success: theme.colors.success,
+    warning: theme.colors.warning,
+    error: theme.colors.error
   };
 
-  const spinnerSize = sizes[size] || sizes.medium;
-  const spinnerColor = colors[color] || colors.primary;
+  const spinnerSize = sizeMap[size] || sizeMap.medium;
+  const spinnerColor = colorMap[color] || colorMap.primary;
 
   const spinnerStyle = {
     width: spinnerSize,
     height: spinnerSize,
-    border: `3px solid ${theme.colors.grey[200]}`,
+    border: `3px solid ${spinnerColor}20`,
     borderTop: `3px solid ${spinnerColor}`,
     borderRadius: '50%',
-    animation: 'hydrogardenSpin 1s linear infinite',
-    display: 'inline-block'
+    animation: 'spin 1s linear infinite',
+    margin: '0 auto'
   };
 
   const containerStyle = {
@@ -41,10 +42,14 @@ const LoadingSpinner = ({
     alignItems: 'center',
     justifyContent: 'center',
     gap: theme.spacing.sm,
-    fontFamily: theme.typography.fontFamily,
+    padding: theme.spacing.md
+  };
+
+  const labelStyle = {
     color: theme.colors.text.secondary,
-    fontSize: theme.typography.fontSizes.sm,
-    direction: 'rtl'
+    fontSize: theme.typography.fontSize.sm,
+    fontWeight: '500',
+    marginTop: theme.spacing.xs
   };
 
   const overlayStyle = {
@@ -54,42 +59,28 @@ const LoadingSpinner = ({
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    backdropFilter: 'blur(2px)',
-    zIndex: theme.zIndex.overlay,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    zIndex: 9999,
+    backdropFilter: 'blur(2px)'
   };
 
-  // Inject keyframes for spinner animation
-  React.useEffect(() => {
-    const styleId = 'hydrogarden-spinner-keyframes';
-    if (!document.getElementById(styleId)) {
-      const style = document.createElement('style');
-      style.id = styleId;
-      style.textContent = `
-        @keyframes hydrogardenSpin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `;
-      document.head.appendChild(style);
+  const keyframes = `
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
-  }, []);
+  `;
 
   const content = (
-    <div 
-      className={className}
-      style={containerStyle}
-      role="status"
-      aria-label={label}
-      aria-live="polite"
-    >
+    <div className={className} style={containerStyle}>
+      <style>{keyframes}</style>
       <div style={spinnerStyle} aria-hidden="true" />
       {label && (
-        <span style={{ fontSize: theme.typography.fontSizes.sm }}>
+        <div style={labelStyle} role="status" aria-live="polite">
           {label}
-        </span>
+        </div>
       )}
     </div>
   );

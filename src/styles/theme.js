@@ -6,252 +6,218 @@
 export const theme = {
   colors: {
     primary: {
-      main: '#2e7d32',
-      light: '#66bb6a',
-      dark: '#1b5e20',
-      contrast: '#ffffff'
+      50: '#f0f9f0',
+      100: '#e0f2e0',
+      200: '#c2e5c2',
+      300: '#a3d8a3',
+      400: '#85cb85',
+      500: '#4CAF50',
+      600: '#43A047',
+      700: '#388E3C',
+      800: '#2E7D32',
+      900: '#1B5E20',
+      main: '#4CAF50'
     },
     secondary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#0d47a1',
-      contrast: '#ffffff'
+      50: '#f8fafc',
+      100: '#f1f5f9',
+      200: '#e2e8f0',
+      300: '#cbd5e1',
+      400: '#94a3b8',
+      500: '#64748b',
+      600: '#475569',
+      700: '#334155',
+      800: '#1e293b',
+      900: '#0f172a',
+      main: '#64748b'
     },
     accent: {
-      main: '#f57c00',
-      light: '#ffb74d',
-      dark: '#e65100',
-      contrast: '#ffffff'
+      blue: '#3B82F6',
+      orange: '#F97316',
+      purple: '#8B5CF6',
+      yellow: '#EAB308',
+      red: '#EF4444'
     },
-    success: {
-      main: '#4caf50',
-      light: '#81c784',
-      dark: '#388e3c',
-      background: '#e8f5e8',
-      border: '#c8e6c9'
-    },
-    warning: {
-      main: '#ff9800',
-      light: '#ffb74d',
-      dark: '#f57c00',
-      background: '#fff3e0',
-      border: '#ffcc02'
-    },
-    error: {
-      main: '#f44336',
-      light: '#e57373',
-      dark: '#d32f2f',
-      background: '#ffebee',
-      border: '#ffcdd2'
-    },
-    info: {
-      main: '#2196f3',
-      light: '#64b5f6',
-      dark: '#1976d2',
-      background: '#e3f2fd',
-      border: '#bbdefb'
-    },
-    grey: {
-      50: '#fafafa',
-      100: '#f5f5f5',
-      200: '#eeeeee',
-      300: '#e0e0e0',
-      400: '#bdbdbd',
-      500: '#9e9e9e',
-      600: '#757575',
-      700: '#616161',
-      800: '#424242',
-      900: '#212121'
-    },
+    success: '#10B981',
+    warning: '#F59E0B',
+    error: '#EF4444',
     background: {
-      default: '#f9f9f9',
-      paper: '#ffffff',
-      elevated: '#ffffff'
+      primary: '#ffffff',
+      secondary: '#f8fafc',
+      tertiary: '#f1f5f9'
     },
     text: {
-      primary: '#212121',
-      secondary: '#757575',
-      disabled: '#bdbdbd',
-      hint: '#9e9e9e'
-    },
-    divider: '#e0e0e0'
-  },
-
-  typography: {
-    fontFamily: 'Arial, "Helvetica Neue", Helvetica, sans-serif',
-    fontSizeBase: 16,
-    fontSizes: {
-      xs: 12,
-      sm: 14,
-      md: 16,
-      lg: 18,
-      xl: 20,
-      xxl: 24,
-      huge: 32
-    },
-    fontWeights: {
-      light: 300,
-      normal: 400,
-      medium: 500,
-      semibold: 600,
-      bold: 700
-    },
-    lineHeights: {
-      tight: 1.2,
-      normal: 1.4,
-      relaxed: 1.6
+      primary: '#0f172a',
+      secondary: '#475569',
+      tertiary: '#64748b'
     }
   },
-
+  
   spacing: {
-    xs: 4,
-    sm: 8,
-    md: 16,
-    lg: 24,
-    xl: 32,
-    xxl: 40,
-    huge: 48
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    '2xl': '3rem',
+    '3xl': '4rem'
   },
-
+  
   borderRadius: {
-    none: 0,
-    sm: 4,
-    md: 8,
-    lg: 12,
-    xl: 16,
-    full: 9999
+    sm: '0.25rem',
+    md: '0.5rem',
+    lg: '0.75rem',
+    xl: '1rem',
+    '2xl': '1.5rem',
+    full: '9999px'
   },
-
+  
   shadows: {
-    none: 'none',
-    sm: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-    md: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
-    lg: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-    xl: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
-    inset: 'inset 0 2px 4px rgba(0,0,0,0.06)'
+    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+    md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'
   },
-
-  transitions: {
-    duration: {
-      fast: '150ms',
-      normal: '250ms',
-      slow: '350ms'
+  
+  typography: {
+    fontFamily: {
+      sans: ['Inter', 'system-ui', 'sans-serif'],
+      mono: ['Monaco', 'Consolas', 'monospace']
     },
-    easing: {
-      easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
-      easeOut: 'cubic-bezier(0.0, 0, 0.2, 1)',
-      easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
-      sharp: 'cubic-bezier(0.4, 0, 0.6, 1)'
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem'
     }
   },
-
+  
   breakpoints: {
-    mobile: '480px',
-    tablet: '768px',
-    desktop: '1024px',
-    wide: '1200px'
-  },
-
-  zIndex: {
-    hide: -1,
-    auto: 'auto',
-    base: 0,
-    docked: 10,
-    dropdown: 1000,
-    sticky: 1100,
-    banner: 1200,
-    overlay: 1300,
-    modal: 1400,
-    popover: 1500,
-    skipLink: 1600,
-    toast: 1700,
-    tooltip: 1800
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px'
   }
 };
 
-// Helper functions for common style patterns
-export const styleHelpers = {
-  // Create responsive font size
-  responsiveFont: (baseSize, scale = 0.8) => ({
-    fontSize: baseSize,
-    [`@media (max-width: ${theme.breakpoints.mobile})`]: {
-      fontSize: baseSize * scale
-    }
-  }),
-
-  // Create button styles
-  buttonBase: {
-    border: 'none',
-    borderRadius: theme.borderRadius.md,
-    cursor: 'pointer',
-    fontFamily: theme.typography.fontFamily,
-    fontWeight: theme.typography.fontWeights.medium,
-    outline: 'none',
-    padding: `${theme.spacing.sm}px ${theme.spacing.md}px`,
-    transition: `all ${theme.transitions.duration.normal} ${theme.transitions.easing.easeInOut}`,
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textDecoration: 'none',
-    userSelect: 'none',
-    '&:focus': {
-      boxShadow: `0 0 0 3px ${theme.colors.primary.light}40`
-    }
-  },
-
-  // Create card styles
+// Component-specific styles
+export const componentStyles = {
   card: {
-    backgroundColor: theme.colors.background.paper,
+    background: theme.colors.background.primary,
     borderRadius: theme.borderRadius.lg,
-    boxShadow: theme.shadows.sm,
-    padding: theme.spacing.md,
-    transition: `box-shadow ${theme.transitions.duration.normal} ${theme.transitions.easing.easeInOut}`
+    boxShadow: theme.shadows.md,
+    padding: theme.spacing.lg,
+    border: `1px solid ${theme.colors.secondary[200]}`,
+    transition: 'all 0.2s ease-in-out',
+    '&:hover': {
+      boxShadow: theme.shadows.lg,
+      transform: 'translateY(-2px)'
+    }
   },
-
-  // Create input styles
+  
+  button: {
+    primary: {
+      backgroundColor: theme.colors.primary.main,
+      color: theme.colors.background.primary,
+      border: 'none',
+      borderRadius: theme.borderRadius.md,
+      padding: `${theme.spacing.sm} ${theme.spacing.lg}`,
+      fontSize: theme.typography.fontSize.base,
+      fontWeight: '500',
+      cursor: 'pointer',
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        backgroundColor: theme.colors.primary[600],
+        transform: 'translateY(-1px)',
+        boxShadow: theme.shadows.md
+      },
+      '&:active': {
+        transform: 'translateY(0)',
+        boxShadow: theme.shadows.sm
+      },
+      '&:disabled': {
+        backgroundColor: theme.colors.secondary[300],
+        cursor: 'not-allowed',
+        transform: 'none',
+        boxShadow: 'none'
+      }
+    },
+    
+    secondary: {
+      backgroundColor: 'transparent',
+      color: theme.colors.primary.main,
+      border: `2px solid ${theme.colors.primary.main}`,
+      borderRadius: theme.borderRadius.md,
+      padding: `${theme.spacing.sm} ${theme.spacing.lg}`,
+      fontSize: theme.typography.fontSize.base,
+      fontWeight: '500',
+      cursor: 'pointer',
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        backgroundColor: theme.colors.primary.main,
+        color: theme.colors.background.primary,
+        transform: 'translateY(-1px)',
+        boxShadow: theme.shadows.md
+      }
+    }
+  },
+  
   input: {
-    border: `1px solid ${theme.colors.grey[300]}`,
-    borderRadius: theme.borderRadius.sm,
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.fontSizes.md,
-    outline: 'none',
+    backgroundColor: theme.colors.background.primary,
+    border: `2px solid ${theme.colors.secondary[200]}`,
+    borderRadius: theme.borderRadius.md,
     padding: theme.spacing.sm,
-    transition: `border-color ${theme.transitions.duration.fast} ${theme.transitions.easing.easeInOut}`,
-    width: '100%',
+    fontSize: theme.typography.fontSize.base,
+    color: theme.colors.text.primary,
+    outline: 'none',
+    transition: 'all 0.2s ease-in-out',
     '&:focus': {
       borderColor: theme.colors.primary.main,
-      boxShadow: `0 0 0 2px ${theme.colors.primary.light}40`
+      boxShadow: `0 0 0 3px ${theme.colors.primary[100]}`
     },
-    '&:disabled': {
-      backgroundColor: theme.colors.grey[100],
-      color: theme.colors.text.disabled,
-      cursor: 'not-allowed'
+    '&::placeholder': {
+      color: theme.colors.text.tertiary
     }
   },
-
-  // RTL support
-  rtl: {
-    direction: 'rtl',
-    textAlign: 'right'
+  
+  navigation: {
+    backgroundColor: theme.colors.background.primary,
+    borderBottom: `1px solid ${theme.colors.secondary[200]}`,
+    boxShadow: theme.shadows.sm,
+    padding: `${theme.spacing.sm} 0`
   },
-
-  // Accessibility helpers
-  visuallyHidden: {
-    border: 0,
-    clip: 'rect(0 0 0 0)',
-    height: '1px',
-    margin: '-1px',
-    overflow: 'hidden',
-    padding: 0,
-    position: 'absolute',
-    width: '1px'
-  },
-
-  // Focus visible for better accessibility
-  focusVisible: {
-    '&:focus:not(:focus-visible)': {
-      outline: 'none'
+  
+  modal: {
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 1000,
+      backdropFilter: 'blur(4px)'
     },
+    content: {
+      backgroundColor: theme.colors.background.primary,
+      borderRadius: theme.borderRadius.lg,
+      boxShadow: theme.shadows.xl,
+      padding: theme.spacing.xl,
+      maxWidth: '90vw',
+      maxHeight: '90vh',
+      overflow: 'auto',
+      position: 'relative'
+    }
+  },
+  
+  accessibility: {
     '&:focus-visible': {
       outline: `2px solid ${theme.colors.primary.main}`,
       outlineOffset: '2px'
