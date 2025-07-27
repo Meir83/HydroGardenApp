@@ -1,0 +1,338 @@
+/* Global styles and animations for HydroGarden app */
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+/* Global keyframe animations */
+@keyframes hydrogardenSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #2e7d32;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove outline for non-keyboard users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Selection color */
+::selection {
+  background-color: #2e7d3240;
+  color: #2e7d32;
+}
+
+::-moz-selection {
+  background-color: #2e7d3240;
+  color: #2e7d32;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  * {
+    border-color: ButtonText !important;
+  }
+  
+  .card {
+    border: 2px solid ButtonText !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Custom scrollbar for dark mode */
+  ::-webkit-scrollbar-track {
+    background: #2c2c2c;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+  }
+}
+
+/* Loading spinner animation class */
+.hydrogarden-loading {
+  animation: hydrogardenSpin 1s linear infinite;
+}
+
+/* Card hover effects */
+.hydrogarden-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hydrogarden-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Button ripple effect */
+.hydrogarden-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.hydrogarden-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  transform: translate(-50%, -50%);
+}
+
+.hydrogarden-button:active::after {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+}
+
+/* Accessible text styles */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Print styles */
+@media print {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  /* Ensure touch targets are at least 44px */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve tap highlighting */
+  button,
+  a {
+    -webkit-tap-highlight-color: rgba(46, 125, 50, 0.3);
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.d-flex { display: flex; }
+.d-block { display: block; }
+.d-none { display: none; }
+
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+.align-center { align-items: center; }
+.align-start { align-items: flex-start; }
+.align-end { align-items: flex-end; }
+
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+/* Spacing utilities */
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+.mt-1 { margin-top: 8px; }
+.mb-1 { margin-bottom: 8px; }
+.pt-1 { padding-top: 8px; }
+.pb-1 { padding-bottom: 8px; }
+
+/* Color utilities */
+.text-primary { color: #2e7d32; }
+.text-secondary { color: #757575; }
+.text-success { color: #4caf50; }
+.text-warning { color: #ff9800; }
+.text-error { color: #f44336; }
+.text-info { color: #2196f3; }
