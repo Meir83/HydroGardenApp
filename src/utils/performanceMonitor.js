@@ -1,4 +1,5 @@
 // Performance monitoring and metrics collection
+import React from 'react';
 class PerformanceMonitor {
   constructor() {
     this.metrics = [];

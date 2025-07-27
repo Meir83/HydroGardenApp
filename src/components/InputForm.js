@@ -155,8 +155,6 @@ const InputForm = memo(({
       </div>
     </Modal>
   );
-};
-
 });
 
 export default InputForm;

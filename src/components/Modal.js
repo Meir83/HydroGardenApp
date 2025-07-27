@@ -1,13 +1,13 @@
 import React, { memo, useCallback } from 'react';
 
 const Modal = memo(({ isOpen, onClose, title, children }) => {
-  if (!isOpen) return null;
-
   const handleBackdropClick = useCallback((e) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
   }, [onClose]);
+
+  if (!isOpen) return null;
 
   return (
     <div 
@@ -59,8 +59,6 @@ const Modal = memo(({ isOpen, onClose, title, children }) => {
       </div>
     </div>
   );
-};
-
 });
 
 export default Modal;

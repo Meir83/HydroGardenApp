@@ -1,4 +1,5 @@
 // Optimized localStorage operations with debouncing and caching
+import React from 'react';
 class StorageOptimizer {
   constructor() {
     this.cache = new Map();
